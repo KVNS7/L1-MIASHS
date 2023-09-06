@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\title{RAPPORT DE PROJET: LABYRINTHE}
+\author{Romain THOMAS & Kevin SOARES }
+\date{Année 2021/2022}
+
+\begin{document}
+\maketitle
+\includegraphics[scale=0.5]{logo_Paris_Nanterre_couleur_RVB.png}
+
+\newpage
+\section*{SOMMAIRE}
+\tableofcontents
+\newpage
+
+\section{Environnement de travail}
+Projet réalisé sous Linux avec la machine virtuelle utilisée en cours cette année.
+
+
+\section{Description du projet}
+\subsection{Présentation générale du projet}
+Ce programme crée un labyrinthe complexe aléatoire, de la taille entrée par l'utilisateur, et affiche le résultat de l'exécution dans un fichier .txt
+\subsection{Présentation des algorithmes utilisés}
+\textbf{Notions utilisées:}\newline
+-Fonctions\newline
+-Allocation dynamique\newline
+-Fichiers\newline\newline\newline
+\textbf{Détail des fonctions:}\newline\newline
+\textbf{matrice\_init:} Alloue dynamiquement une matrice de taille 2n plus 1 et met des 0 pour les murs et des chiffres de 1 à n au carré pour les cases\newline \newline
+\textbf{test\_cases:} Teste chaque case du labyrinthe pour savoir si elles ont la même valeur\newline\newline
+\textbf{wall\_break:} Casse le mur de coordonnées [x][y] passé en paramètre et met au hasard la valeur de gauche/droite ou haut/bas\newline\newline
+\textbf{random\_wall:} Renvoie 2 valeurs x et y qui correspondent aux coordonnées d’un mur et utilise ensuite la fonction précédente avec ces coordonnées\newline \newline
+\textbf{murs\_restant:} Fini ce qu'a commencé la fonction wall\_break\newline \newline
+\textbf{affichage\_laby:} Affiche le labyrinthe sous une forme lisible\newline \newline
+\textbf{fichier\_labyrinthe:} Affiche le labyrinthe dans un fichier au format .txt
+
+
+\section{Bibliothèques et outils utilisés}
+\textbf{stdio.h:} Utilisée pour appeler toutes les fonctions "basiques" en C (ex: printf, scanf
+\newline
+\textbf{stdlib.h:} Utilisée pour les fonctions d'allocation dynamique (ex: malloc) et pour l'aleatoire (fonction rand)
+\newline
+\textbf{time.h:} Utilisée pour choisir des nombres aléatoires sans avoir à chaque fois la même suite de nombres
+
+
+\section{Travail réalisé}
+\textsc{comparaison entre le travail prévu au début du projet et le travail rendu à la fin}
+\subsection{Fonctionnalités prévues}
+L'idée de base était de créer un labyrinthe aléatoire et de le résoudre, et d'afficher ce labyrinthe avec la solution.
+\subsection{Fonctionnalités réalisées}
+Le rendu est un labyrinthe complexe (plusieurs chemins possibles au lieu d'un seul), sans sa solution la plus courte.
+\subsection{Répartition du travail}
+Le code a été découpé en fonctions qui marchent ensemble. La répartition est la suivante:\newline\newline
+\textbf{Romain THOMAS:}\newline
+-fonction wall\_break\newline
+-fonction murs\_restants\newline
+-fonction affichage\_labyrinthe\newline
+\newline\newline
+\textbf{Kevin SOARES:}\newline
+-fonction test\_cases\newline
+-fonction random\_wall\newline
+-fonction fichier\_labyrinthe\newline
+-fonction affiche\newline\newline
+\textbf{Réalisé ensemble:}\newline
+-fonction matrice\_init
+
+
+
+
+\section{Difficultés}
+\textsc{liste des difficultés rencontrées par chaque personne}
+\subsection{Difficultés rencontrées par Romain THOMAS}
+\textbf{Allocation dynamique:}
+C'est la notion qui m'as posé le plus de difficultés dans ce projet. L'allocation dynamique sur des tableaux à deux dimensions est plus compliquée et plus sujette à des erreurs d'inattention que sur des tableaux à une dimension\newline
+\textbf{Dimension de la matrice}: Nous avons pris du temps du trouver le format à utiliser pour la matrice\newline
+
+\subsection{Difficultés rencontrées par Kevin SOARES}
+
+\textbf{"Randomiser"}:J'ai eu du mal avec la fonction random\_wall qui permet de choisir un mur au hasard\newline
+\textbf{Découpage du programme:}Ca a été compliqué de trouver les étapes à réaliser afin de découper le programme en plusieurs fonctions ayant chacune un rôle précis
+
+
+
+
+
+
+\section{Bilan}
+\subsection{Bilan personnel Romain THOMAS}
+J'ai trouvé le projet beaucoup plus difficile que ce qui est demandé en TD. Même s'il a fallu parfois se creuser la tête, cela a permis de m'améliorer beaucoup plus rapidement qu'en faisant seulement les TD.\newline
+J'aime bien aussi le fait d'avoir un gros projet sur lequel on avance progressivement plutôt que des exercices simples mais parfois un peu abstraits.
+\subsection{Bilan personnel Kevin Soares}
+J'ai trouvé le projet très concret par rapport aux TD, ce qui donne une réelle motivation pour s'impliquer dedans. De plus, la difficulté rajoute de la motivation. Et finalement c'est assez amusant à faire.
+
+\subsection{Conclusion}
+Avoir un projet est vraiment formateur. Le fait de ne pas savoir comment structurer les étapes et organiser son code est parfois décourageant, mais cela permet de vraiment s'améliorer. En effet, on doit se renseigner et comprendre par nous mêmes certaines notions qu'il aurait été plus lent d'assimiler en cours.\newline \newline
+Cela permet aussi de s'entrainer à travailler en groupe, à comprendre les codes des autres et à savoir expliquer les siens.C'est donc vraiment utile dans des études qui amènent vers les métiers de l'informatique.
+
+
+\section{Webographie}
+\textbf{Sites Internet utilisés pour de l'aide:}\newline
+-KooR.fr\newline
+-Stack Overflow.com\newline
+-Wikipédia\newline
+-Diverses vidéos d'explications sur YouTube
+
+
+\section{Annexes}
+\subsection{Cahier des charges}
+ \textbf{Le programme est découpé en plusieurs fonctions qui respectivement:}\newline
+- alloue dynamiquement une matrice de taille 2n plus 1 et met des 0 pour les murs et des chiffres de 1 à n au carré pour les cases\newline
+- teste chaque case du labyrinthe pour savoir si elles ont la même valeur\newline 
+- renvoie 2 valeurs x et y qui correspondent aux coordonnées d’un mur et utilise ensuite la fonction qui suit avec ces coordonnées\newline
+- casse le mur [x][y] passé en paramètre et met au hasard la valeur de gauche/droite ou haut/bas\newline
+- affiche le labyrinthe avec des \#(pour les murs) et des espaces\newline
+- créer un fichier (ou le modifie si existant) en y mettant l’affichage du labyrinthe\newline
+
+\subsection{Exemple d'exécution du projet}
+\includegraphics[scale=0.5]{screenshot laby final.png}
+\subsection{Manuel utilisateur}
+\textbf{Pour faire fonctionner le programme:}\newline
+-Compiler\newline
+-Exécuter\newline
+-Entrer la taille souhaitée (attention la taille entrée n devient 2n plus 1 car on compte les murs dans la taille du labyrinthe\newline
+-Ouvrir le fichier .txt contenant le résultat de l'exécution
+
+\end{document}
